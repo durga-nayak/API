@@ -41,7 +41,7 @@ public class Main {
 			if(ESCAPE_TOKS.contains(token)){
 				continue;
 			}
-			
+			System.out.println(input);
 			if(token.equalsIgnoreCase("}")){
 //				icelandGraph = new IcelandGraph();
 				while (tokStack.getTop()!=-1) {
