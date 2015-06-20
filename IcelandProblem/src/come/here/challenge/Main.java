@@ -48,7 +48,6 @@ public class Main {
 				continue;
 				
 			}
-			System.out.println("+++++++++++");
 			if(token.equalsIgnoreCase(")")){
 				if(tokStack.getTop()== -1){
 					continue;
