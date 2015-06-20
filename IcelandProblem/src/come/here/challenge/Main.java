@@ -3,9 +3,6 @@
  */
 package come.here.challenge;
 
-import java.util.StringTokenizer;
-
-import com.here.challenge.iceland.Iceland;
 import com.here.challenge.iceland.IcelandGraph;
 import com.here.challenge.iceland.Stack;
 
