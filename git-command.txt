@@ -10,6 +10,7 @@ git config --global alias.br branch
 git config --global alias.up rebase
 git config --global alias.ci commit
 
-
+git commit -m "iceland" .
+git remote 
 git remote add API https://github.com/durga-nayak/API.git
 git push -u API master
