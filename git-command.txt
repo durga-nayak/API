@@ -1,0 +1,15 @@
+git init .
+git add .
+git config user.name durga-nayak
+git config --global user.email hapi.durga@gmail.com
+git config --global core.editor vim
+# Add some SVN-like aliases
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.up rebase
+git config --global alias.ci commit
+
+
+git remote add API https://github.com/durga-nayak/API.git
+git push -u API master
