@@ -63,27 +63,29 @@ public class IcelandGraph {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		IcelandGraph icelandGraph = new IcelandGraph();
-		icelandGraph.addIceland("A");
-		icelandGraph.addIceland("B");
-		icelandGraph.addIceland("C");
-		icelandGraph.addIceland("D");
-		icelandGraph.addIceland("E");
-		icelandGraph.addIceland("F");
-
-		icelandGraph.connectIceland("A", "C");
-		icelandGraph.connectIceland("C", "B");
-		icelandGraph.connectIceland("C", "E");
-		icelandGraph.connectIceland("B", "D");
-		icelandGraph.connectIceland("B", "E");
-		icelandGraph.connectIceland("E", "F");
-		icelandGraph.displayAdjacentMatrix();
-		icelandGraph.printCriticalEdge();
-	}
+//	public static void main(String[] args) {
+//		// TODO Auto-generated method stub
+//		IcelandGraph icelandGraph = new IcelandGraph();
+//		icelandGraph.addIceland("A");
+//		icelandGraph.addIceland("B");
+//		icelandGraph.addIceland("C");
+//		icelandGraph.addIceland("D");
+//		icelandGraph.addIceland("E");
+//		icelandGraph.addIceland("F");
+//
+//		icelandGraph.connectIceland("A", "C");
+//		icelandGraph.connectIceland("C", "B");
+//		icelandGraph.connectIceland("C", "E");
+//		icelandGraph.connectIceland("B", "D");
+//		icelandGraph.connectIceland("B", "E");
+//		icelandGraph.connectIceland("E", "F");
+//		icelandGraph.displayAdjacentMatrix();
+//		icelandGraph.printCriticalEdge();
+//	}
 	
-	public void printCriticalEdge(){
+	public String printCriticalEdge(){
+		StringBuilder builder = new StringBuilder();
+		builder.append("{");
 		for (int i =0; i < this.vertexCount; i++){
 			int connectedIcelandCount =0;
 			int endPoint = 0;
@@ -94,9 +96,20 @@ public class IcelandGraph {
 				}
 			}
 			if (connectedIcelandCount == 1){
-				System.out.print("("+iceland[i].getName()+","+iceland[endPoint].getName()+")");
+				builder.append("("+iceland[i].getName()+","+iceland[endPoint].getName()+")");
+				builder.append(",");
 			}
 		}
+		if(builder.lastIndexOf(",")!=-1){
+			String criticalEdges = builder.substring(0, builder.lastIndexOf(","));
+			builder = new StringBuilder(criticalEdges);
+		}
+		if(builder.length() ==1){
+			builder.append("(NA)");
+		}
+		builder.append("}");
+		System.out.println(builder.toString());
+		return builder.toString();
 	}
 	
 
